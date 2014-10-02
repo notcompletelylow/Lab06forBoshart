@@ -46,7 +46,7 @@ Cell* Maze::processBackTrack(StackLinked<Cell>* stack)
    //top_cell is NULL if the stack is empty
    //top_cell's direction is DEAD_END if you need to keep backtracking
 
-   while (                                        )  //need to back track
+   while ()  //need to back track
    {
       
 
@@ -72,27 +72,31 @@ bool Maze::isSolved(Cell* curr_cell, StackLinked<Cell>* stack)
 {
    //DO THIS
    //get row and col from curr_cell
-
-
+   int row = curr_cell->getRow();
+   int col = curr_cell->getCol();
+   int value = maze->getElement(row, col);
 
    //have you solved the maze? (check that we are at the bottom right maze location and that it is a SPACE
-   if (                                                          )  
+   if ((row == width) && (col == height) && (value == SPACE))  
    {
 
 
       //set the maze location to TRIED
+      maze->setElement(row, col, TRIED);
 
 
       //push curr_cell
+      stack->push(curr_cell);
 
 
       gui->update();
       //return the appropriate boolean
-
+      return true;
    }
 
 
    //return the appropriate boolean
+   return false;
 }
 
 //backing through the maze, setting the solution color to PATH
