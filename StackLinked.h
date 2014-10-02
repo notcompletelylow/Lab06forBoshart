@@ -78,11 +78,11 @@ T* StackLinked<T>::peek()
 template < class T >
 void StackLinked<T>::push(T* item)
 {
-   //DO THIS
+   NextNode<T>* temp = new NextNode<T>(item);
+   temp->setNext(top);
+   top = temp;
 
-
-
-
+   sze++;
 }
 
 template < class T >
