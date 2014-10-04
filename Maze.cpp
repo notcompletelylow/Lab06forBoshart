@@ -78,7 +78,7 @@ bool Maze::isSolved(Cell* curr_cell, StackLinked<Cell>* stack)
    int value = maze->getElement(row, col);
 
    //have you solved the maze? (check that we are at the bottom right maze location and that it is a SPACE
-   if ((row == width) && (col == height) && (value == SPACE))  
+   if ((row == height) && (col == width) && (value == SPACE))  
    {
 
 
@@ -161,7 +161,7 @@ bool Maze::traverse()
          //update the cell to TRIED
          //put the cell on the stack (move forward through the maze)
          maze->setElement(row, col, TRIED);
-         stack->push(curr_cell);
+         stack.push(curr_cell);
 
 
 

@@ -97,8 +97,9 @@ T* StackLinked<T>::pop()
 	top = top->getNext();
 	delete temp_node;
 	
-	return temp_item;
+   sze--;
 
+	return temp_item;
 }
 
 #endif
